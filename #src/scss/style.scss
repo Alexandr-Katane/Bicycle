@@ -1,0 +1,469 @@
+
+//<Подключение шрифтов через Google fonts>===============================================================
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
+
+//<Шрифт по умолчанию>========================================================================================
+$fontFamily: "Lato";
+//</Шрифт по умолчанию>========================================================================================
+
+//<Переменные>========================================================================================
+$minWidth: 320px;
+$maxWidth: 1600;
+$maxWidthContainer: 1130;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3:767.98;
+$md4:479.98;
+//</Переменные>========================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>========================================================================================
+@import "nullstyle";
+
+body {
+    font-family: $fontFamily;
+    &._lock {
+        overflow: hidden;
+    }
+}
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>========================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ>========================================================================================
+@import "mixins";
+@import "header";
+@import "ui";
+@import "swiper";
+@import "footer";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ>========================================================================================
+
+//<ОБОЛОЧКА>========================================================================================
+.wrapper{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    &._load{
+    }
+}
+//</ОБОЛОЧКА>========================================================================================
+
+
+
+//<ОСНОВНАЯ СЕТКА>========================================================================================
+._container{
+    max-width: $maxWidthContainer+px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+//</ОСНОВНАЯ СЕТКА>========================================================================================
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+.main-screen {
+    flex: 1 0 100%;
+    position: relative;
+	&__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+	}
+}
+
+.generation {
+    background-color: #f7f7f7;
+    @include responsive-size(padding-bottom,120,30);
+    @include responsive-size(padding-top,120,30);
+    &__content {
+    }
+
+    &__block {
+    }
+
+}
+
+.block {
+    text-align: center;
+    &__icon {
+        margin: 0 0 30px 0;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #353738;
+        margin: 0 0 18px 0;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 34px;
+        color: #848789;
+        &_j {
+            text-align: justify;
+            font-size: 16px;
+            line-height: 30px;
+            &::after {
+                content: '';
+                display: block;
+                margin: 35px auto 0 auto;
+                width: 50px;
+                height: 1px;
+                background-color: #ebebeb;
+            }
+            @media (max-width:1500px) {
+                &::after {
+                    margin: 15px auto 0 auto;
+                }
+            }
+        }
+    }
+}
+
+//<BRANDS>========================================================================================
+
+.brands {
+    &_rev {
+        .brands__column {
+            order: 1;
+            &_b {
+                order: 2; 
+            }
+        }
+    }
+    &_last {
+        @media (max-width:1100px) {
+            .brands__column {
+                &:nth-child(1) {
+                    order: 2;
+                }
+                &:nth-child(2) {
+                    order: 1;
+                }
+                &:nth-child(3) {
+                    order: 3;
+                }
+            }
+        }
+    }
+    &__row {
+        display: flex;
+        @media (max-width:1100px) {
+            flex-direction: column;
+        }
+    }
+
+    &__column {
+        flex: 0 1 33.333%;
+        &_b {
+            flex: 0 1 66.667%;
+        }
+    }
+
+    &__item {
+    }
+
+    &__content {
+        padding: 70px 65px 55px 65px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            margin: 0 0 0 -10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #fff;
+        }
+        @media (max-width:1500px) {
+            padding: 40px 35px 30px 35px;
+        }
+    }
+
+    &__image {
+        padding: 0 0 37.51% 0;
+    }
+}
+.item {
+    display: block;
+    position: relative;
+    height: 100%;
+    &__logo {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        background-color: rgba(100,194,158,0.5);
+        transition: all 0.3s ease 0s;
+        opacity: 0;
+        visibility: hidden;
+
+        span {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2.8px;
+            margin: 10px 0 0 0 ;
+            text-transform: uppercase;
+            color: #fff;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            .item__logo { 
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    @media (max-width:1100px) {
+        padding: 0 0 70% 0;
+    }
+}
+
+//</BRANDS>========================================================================================
+
+
+//<SlIDER>========================================================================================
+.slider {
+    background-color: #f7f7f7;
+    @include responsive-size(padding-top,120,35);
+    @include responsive-size(padding-bottom,60,35);
+    &__content {
+    }
+
+    &__body {
+        @include responsive-size(padding-bottom,100,50);
+    }
+
+    &__item {
+        text-align: center;
+    }
+
+    &__icon {
+        margin: 0 0 35px 0;
+    }
+
+    &__title {
+        margin: 0 0 20px 0;
+        @include responsive-size(font-size,18,16);
+        font-weight: 700;
+        span {
+            font-weight: 300;
+            color: #848789;
+        }
+    }
+
+    &__text {
+        line-height: 34px;
+        font-style: italic;
+        color: #848789;
+        @include responsive-size(font-size,24,20);
+    }
+    &__controls {
+        
+    }
+}
+//</SlIDER>=======================================================================================
+
+//<SHOP>=======================================================================================
+.shop {
+    &__body {
+        display: flex;
+        @media (max-width: 1100px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__column {
+        flex: 0 1 16.666%;
+        &_b {
+            flex: 0 1 33.333%;
+        }
+        @media (max-width: 1100px) {
+            flex: 0 1 50%;
+            &:first-child {
+                flex: 1 1 100%;
+            }
+            &:last-child {
+                flex: 1 1 100%;
+            }
+        }
+    }
+
+    &__block {
+    }
+
+    &__footer {
+        @include responsive-size(padding-top,75,35);
+        @include responsive-size(padding-bottom,75,35);
+        text-align: center;
+        background-color: #282f35;
+    }
+
+    &__container {
+    }
+
+    &__btn {
+        display: inline-block;
+        height: 50px;
+        background-color: rgba(255,255,255,0.0);
+        border: 1px solid rgba(255,255,255,0.49);
+        font-size: 14px;
+        line-height: 48px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #ffffff;
+        @include responsive-size(padding-left,60,20);
+        @include responsive-size(padding-right,60,20);
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: rgba(255,255,255,0.3);
+            }
+        }
+    }
+}
+.block-shop {
+    height: 100%;
+    &__row {
+        display: flex;
+    }
+
+    &__column {
+        flex: 0 1 50%;
+    }
+
+    &__item {
+        height: auto;
+        padding: 0 0 50% 0;
+        &_b {
+            padding: 0 0 200.5% 0 ;
+        }
+        &_l {
+            padding: 0 0 100% 0;
+        }
+    }
+}
+//</SHOP>=======================================================================================
+
+//<SUBSCRIBE>=======================================================================================
+.subscribe {
+
+    &__container {
+    }
+
+    &__body {
+        @include responsive-size(padding-top,110,45);
+        @include responsive-size(padding-bottom,110,45);
+        max-width: 534px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__logo {
+        margin: 0 0 39px 0;
+    }
+
+    &__label {
+        font-size: 24px;
+        font-style: italic;
+        color: #848789;
+        margin: 0 0 35px 0;
+    }
+
+    &__form {
+        display: flex;
+        @media (max-width:500px) {
+            display: block;
+        }
+    }
+
+    &__input {
+        flex: 1 1 auto;
+        padding: 0 8px 0 0;
+        @media (max-width:500px) {
+            padding: 0 0 8px 0;
+        }
+    }
+
+    &__button {
+        flex: 0 0 126px;
+    }
+
+    &__btn {
+        width: 100%;
+        height: 69px;
+        line-height: 69px;
+        color: #fff;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 300;
+        background-color: #64c29e;
+        @media (any-hover:hover) {
+            &:hover {
+                background-color: #62b696;
+            }
+        }
+    }
+}
+
+.input {
+    width: 100%;
+    height: 69px;
+    background-color: #ffffff;
+    border: 1px solid #d3d7d9;
+    padding: 0 28px;
+    font-size: 20px;
+    font-style: italic;
+    color: #929292;
+    &._focus {
+        font-style: normal;
+        color: #333;
+    }
+    &._error {
+        border: 1px solid red;
+    }
+}
+
+.form__error {
+    align-self: center;
+    width: 100%;
+    max-width: 500px;
+    line-height: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.877);
+    color: red;
+    text-align: center;
+}
+
+//</SUBSCRIBE>=======================================================================================
