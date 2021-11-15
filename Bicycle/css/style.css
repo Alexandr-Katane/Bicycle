@@ -1389,63 +1389,63 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 1130px) {
   .footer {
-    padding-top: calc(40px + (100 - 40) * ((100vw - 320px) / (1270 - 320)));
+    padding-top: calc(40px + (100 - 40) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .footer {
-    padding-bottom: calc(40px + (100 - 40) * ((100vw - 320px) / (1270 - 320)));
+    padding-bottom: calc(40px + (100 - 40) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .generation {
-    padding-bottom: calc(30px + (120 - 30) * ((100vw - 320px) / (1270 - 320)));
+    padding-bottom: calc(30px + (120 - 30) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .generation {
-    padding-top: calc(30px + (120 - 30) * ((100vw - 320px) / (1270 - 320)));
+    padding-top: calc(30px + (120 - 30) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .slider {
-    padding-top: calc(35px + (120 - 35) * ((100vw - 320px) / (1270 - 320)));
+    padding-top: calc(35px + (120 - 35) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .slider {
-    padding-bottom: calc(35px + (60 - 35) * ((100vw - 320px) / (1270 - 320)));
+    padding-bottom: calc(35px + (60 - 35) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .slider__body {
-    padding-bottom: calc(50px + (100 - 50) * ((100vw - 320px) / (1270 - 320)));
+    padding-bottom: calc(50px + (100 - 50) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .slider__title {
-    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1270 - 320)));
+    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .slider__text {
-    font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1270 - 320)));
+    font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .shop__footer {
-    padding-top: calc(35px + (75 - 35) * ((100vw - 320px) / (1270 - 320)));
+    padding-top: calc(35px + (75 - 35) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .shop__footer {
-    padding-bottom: calc(35px + (75 - 35) * ((100vw - 320px) / (1270 - 320)));
+    padding-bottom: calc(35px + (75 - 35) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .shop__btn {
-    padding-left: calc(20px + (60 - 20) * ((100vw - 320px) / (1270 - 320)));
+    padding-left: calc(20px + (60 - 20) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .shop__btn {
-    padding-right: calc(20px + (60 - 20) * ((100vw - 320px) / (1270 - 320)));
+    padding-right: calc(20px + (60 - 20) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .subscribe__body {
-    padding-top: calc(45px + (110 - 45) * ((100vw - 320px) / (1270 - 320)));
+    padding-top: calc(45px + (110 - 45) * ((100vw - 320px) / (1130 - 320)));
   }
 
   .subscribe__body {
-    padding-bottom: calc(45px + (110 - 45) * ((100vw - 320px) / (1270 - 320)));
+    padding-bottom: calc(45px + (110 - 45) * ((100vw - 320px) / (1130 - 320)));
   }
 }
 
@@ -1667,6 +1667,21 @@ button.swiper-pagination-bullet {
     background-color: #62b696;
   }
 }
+
+@media (any-hover: none) {
+  .item .item__logo {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .shop__btn {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .subscribe__btn {
+    background-color: #62b696;
+  }
+}
 @supports (-webkit-appearance:none){
 
 }
@@ -1720,6 +1735,14 @@ button.swiper-pagination-bullet {
 }
 
  @media (any-hover: hover){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (any-hover: none){
 
 @supports (-webkit-appearance:none){
 
