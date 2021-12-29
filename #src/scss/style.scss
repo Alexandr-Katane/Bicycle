@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
 
 //<Шрифт по умолчанию>========================================================================================
-$fontFamily: "Lato";
+$fontFamily: "Lato", sans-serif;
 //</Шрифт по умолчанию>========================================================================================
 
 //<Переменные>========================================================================================
@@ -82,7 +82,6 @@ body {
 
 .generation {
     background-color: #f7f7f7;
-    //border:  1px solid red;
     @include responsive-size(padding-bottom,120,30);
     @include responsive-size(padding-top,120,30);
     &__content {
